@@ -50,8 +50,9 @@ namespace PrismOS.Libraries.Text.INI
                 }
                 if (S[I] == '#')
                 {
-                    while (S[++I] != '\n')
+                    while (S[I] != '\n' && S[I] != '\0')
                     {
+                        I++;
                     }
                     continue;
                 }
