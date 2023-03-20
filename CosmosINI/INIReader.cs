@@ -93,6 +93,20 @@ namespace CosmosINI
 			Value = string.Empty;
 			return false;
 		}
+		public bool TryReadBool(string Key, out bool Value)
+		{
+		    if (TryReadString(Key, out string S))
+		    {
+			if (S == "1")
+			{
+			    Value = true;
+			    return true;
+			}
+
+		    }
+		    Value = false;
+		    return false;
+		}
 		public bool TryReadDouble(string Key, out double Value)
 		{
 			if (TryReadString(Key, out string S))
